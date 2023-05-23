@@ -1,43 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="pl">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Językowa Szkoła Letnia</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<!--    NAWIGACJA    -->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <section id="start">
+      <header class="row">
+        <div class="col-md-12 col-lg-5">
+          <h1>Językowa Szkoła Letnia</h1>
+        </div>
+        <nav class="col-md-12 col-lg-7 navbar navbar-expand-lg">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_nav" aria-controls="navbar_nav" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar_nav">
+            <ol class="navbar-nav">
+              <li class="nav-item"><a href="#header" class="nav-link">Strona główna</a></li>
+              <li class="nav-item"><a href="#o_nas" class="nav-link">O nas</a></li>
+              <li class="nav-item"><a href="#program" class="nav-link">Program</a></li>
+              <li class="nav-item"><a href="#zapisy" class="nav-link">Zapisy</a></li>
+              <li class="nav-item"><a href="#kontakt" class="nav-link">Kontakt</a></li>
+              <li class="nav-item"><a href="tel:123123123" class="nav-link">Zadzwoń</a></li>
+            </ol>
+          </div>
+        </nav>
+        <div class="clear_floats"></div>
+      </header>
+    </section>
+
+<!--    SEKCJA 1 - SLIDER    -->
+
+    <section class="row" id="slider">
+      <div class="left_side col-8">
+        <h2>Witaj na stronie<br><span class="second_h2">Jęzkowej Szkoły Letniej!</span></h2>
+        <p>Nauka języka w letniej atmosferze.<br>Studencie - wzbogacaj umiejętności,<br>poznawaj kulturę, ciesz się przygodą!</p>
+        <button>Sprawdź naszą ofertę!</button>
+      </div>
+      <div class="right_side col-4">
+        <img src="/images/future_of_work_concept_illustration-removebg-preview.png" alt="">
+      </div>
+      <div class="clear_floats"></div>
+    </section>
+
+<!--    SEKCJA 2 - BLOG 1    -->
+
+    <section class="container">
+      <div class="row">
+        <div class="left_side_blog col-lg-6 col-md-6">
+          <h2>Językowa Szkoła Letnia<br><span class="second_h2">dla studentów I oraz II<br>stopnia</span></h2>
+          <p>Jesteśmy zespołem doświadczonych nauczycieli,<br>którzy pasjonują się przekazywaniem wiedzy i<br>umiejętności językowych w przyjaznej i<br>inspirującej atmosferze letniej przygody.</p>
+          <button>Zapisz się!</button>
+        </div>
+        <div class="right_side_blog col-lg-6 col-md-6">
+          <img src="/images/flat-international-mother-language-day-illustration_23-2149219243.png" alt="">
+        </div>
+        <div class="clear_floats"></div>
+      </div>
+    </section>
+
+<!--    SEKCJA 3 - OFERTA    -->
+
+    <section id="offer_section_main">
+      <section class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 offer_section">
+            <img src="/images/image1.png" alt="">
+            <h5>Oferta dla studentów I stopnia</h5>
+            <p>Nasza oferta językowa dla studentów I stopnia studiów to doskonała okazja, aby rozwijać swoje umiejętności językowe na wyższym poziomie. Oferujemy intensywne zajęcia językowe, które pozwolą Ci poszerzyć swoje słownictwo oraz poprawić gramatykę.</p>
+          </div>
+          <div class="col-lg-6 col-md-12 offer_section" id="offer_section_2">
+            <img src="/images/image22.png" alt="">
+            <h5>Oferta dla studentów II stopnia</h5>
+            <p>Nasza oferta językowa dla studentów II stopnia studiów to doskonałe rozwiązanie dla tych, którzy chcą poszerzyć swoje umiejętności językowe na zaawansowanym poziomie. Oferujemy specjalistyczne zajęcia, które pozwolą Ci dalej doskonalić swoje umiejętności.</p>
+          </div>
+          <div class="clear_floats"></div>
+        </div>
+      </section>
+    </section>
+
+<!--    SEKCJA 4 - BLOG 2     -->
+
+    <section class="container">
+      <div class="row">
+        <div class="right_side_blog col-lg-6 col-md-6">
+          <img src="/images/english-book-illustration-design_23-2149507600.png" alt="">
+        </div>
+        <div class="left_side_blog col-lg-6 col-md-6">
+          <h2>Intesywne kursy<br>językowe<span class="second_h2"> dostosowane<br>pod wymagania IT</span></h2>
+          <p>Nasz zróżniocowany program nauczania obejmuje<br>nauke słuchania, mówienia, czytania i pisania w<br>języku docelowym, a także rozwijanie umiejętności<br>komunikacyjnych i gramatycznych.</p>
+          <button>Czytaj dalej</button>
+        </div>
+        <div class="clear_floats"></div>
+      </div>
+    </section>
+
+<!--    SEKCJA 5 - OFERTA JEZYKOW    -->
+
+    <section id="languages_offer">
+        <section class="container">
+          <div class="row">
+            <div class="centering col-md-12">
+              <h2>Języki oferowane przez<br>nasza <span class="second_h2">Szkołę Letnią</span><br></h2>
+              <p>Sprawdź, jakie języki będziesz w stanie przyswoić z <br>naszą Szkołą Letnią</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 napis1">
+              <img src="/images/Flag_of_the_United_Kingdom_(1-2).png" alt="">
+              <h2>Brytyjska odmiana</h2>
+              <h3>języka angielskiego</h3>
+            </div>
+            <div class="col-md-6 napis1">
+              <img src="/images/Flag_of_France_(1794–1815,_1830–1974,_2020–present.png" alt="">
+              <h2>Amerykańska odmiana</h2>
+              <h3>języka angielskiego</h3>
+            </div>
+            <div class="clear_floats"></div>
+          </div>
+        </section>
+    </section>
+
+<!--    SEKCJA 6 - PAKIETY    -->
+
+    <section class="container">
+      <div class="row">
+        <div class="centering col-md-12">
+          <h2><span class="second_h2">Aktualne ceny naszych</span><br>pakietów językowych</h2>
+          <p>Staramy się, aby ceny oferowane przez naszą<br>szkoła były atrakcyjne i dostępne dla wszystkich.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="packet_container">
+          <div class="packet col-lg-4 col-md-12" id="packet1">
+            <div class="hearts">
+              <img src="/images/serce1.png" alt="">
+              <img src="/images/serce2.png" alt="">
+              <img src="/images/serce2.png" alt="">
+              <div class="clear_floats"></div>
+            </div>
+            <h2>Pakiet<br><span class="second_h2">podstawowy</span></h2>
+            <ul>
+              <li>Dwutygodniowy wyjazd<br>do Londyn</li>
+              <li>Zajęcia na<br>różnym poziomie</li>
+              <li>Wysokiej jakości<br>materiały dydaktyczne</li>
+            </ul>
+            <h2>1000 zł</h2>
+          </div>
+          <div class="packet col-lg-4 col-md-12" id="packet2">
+            <div class="hearts">
+              <img src="/images/serce1.png" alt="">
+              <img src="/images/serce1.png" alt="">
+              <img src="/images/serce2.png" alt="">
+              <div class="clear_floats"></div>
+            </div>
+            <h2>Pakiet<br><span class="second_h2">ulepszony</span></h2>
+            <ul>
+              <li>Oferta z pakietu<br>podstawowego oraz:</li>
+              <li>Zakwaterowanie<br>hotelowe</li>
+              <li>Codzienne<br>obiadokolacje</li>
+            </ul>
+            <h2>2000 zł</h2>
+          </div>
+          <div class="packet col-lg-4 col-md-12" id="packet3">
+            <div class="hearts">
+              <img src="/images/serce1.png" alt="">
+              <img src="/images/serce1.png" alt="">
+              <img src="/images/serce1.png" alt="">
+              <div class="clear_floats"></div>
+            </div>
+            <h2>Pakiet<br><span class="second_h2">zaawansowany</span></h2>
+            <ul>
+              <li>Oferta z pakietu<br>ulepszonego oraz:</li>
+              <li>Pełne wyżywienie: obiad,<br>sniadanie, kolacja</li>
+              <li>Dostęp do okolicznych<br>atrakcji</li>
+            </ul>
+            <h2>1000 zł</h2>
+          </div>
+          <div class="clear_floats"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="app" class="like_button_container"></div>
+    </section>
+
+<!--    SEKCJA 7 - BANER LOKALIZACJA    -->
+
+    <section id="localization">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <h2>Sprawdź<br><span class="under_h2">naszą lokalizację</span></h2>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <i class="fa fa-map-marker" style="font-size:48px;"></i>
+            <h4>
+              Adres 1
+            </h4>
+            <p>
+              00-000 Warszawa<br>
+              ul. Przykładowa 1<br>
+              tel. <a href="tel:123123123">123 123 123</a>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <i class="fa fa-map-marker" style="font-size:48px;"></i>
+            <h4>
+              Adres 2
+            </h4>
+            <p>
+              00-000 Warszawa<br>
+              ul. Przykładowa 2<br>
+              tel. <a href="tel:123123123">123 123 123</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--    SEKCJA 8 - MAPKA    -->
+
+    <section class="container" id="google_map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.803116818!2d21.061194099999998!3d52.23293795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1684783260019!5m2!1spl!2spl" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+<!--    SEKCJA 9 - STOPKA    -->
+
+    <footer>
+      <section class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-4">
+            <h3>Językowa Szkoła Letnia</h3>
+            <p>Nauka języka w letniej atmosferze.<br>
+              Wzbogacaj umiejętności, poznawaj kulturę,<br>ciesz się przygodą!</p>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h4>Adres</h4>
+            <p>00-000 Warszawa<br>
+              ul. Przykładowa 1<br>
+              tel. <a href="tel:123123123">123 123 123</a><br>
+              email: <a href="mailto:email@email.pl">email@email.pl</a></p>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h4>Godziny otwarcia</h4>
+              <p>
+                Poniedziałek - piątek:<br>
+                09:00 - 18:00<br>
+                Sobota:<br>
+                09:00 - 14:00
+              </p>
+          </div>
+        </div>
+      </section>
+      <section class="row">
+        <div class="col-sm-12 copyright">
+          <p>© Szkoła Językowa 2023 - Wszystkie prawa zastrzeżone</p>
+        </div>
+      </section>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
