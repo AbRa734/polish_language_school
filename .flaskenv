@@ -1,0 +1,1 @@
+FLASK_APP=/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/server/server.py

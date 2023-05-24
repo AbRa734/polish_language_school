@@ -1,36 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App'
+import { useState } from "react";
 
-class NameForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
+export default function Multiple() {
+  const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
+    );
+  };
 
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
+  return (
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-        );
-    }
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
+
+        <label htmlFor="message">Message:</label>
+        <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
+
+        <button type="submit">Submit</button>
+      </form>
+  );
 }
 
+
 const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(<NameForm />);
+root.render(<App />);
