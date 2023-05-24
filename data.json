@@ -1,20 +1,36 @@
 {
-    "wiadomosci": [
+    "messages": [
         {
-            "handle": "www",
-            "tCount": "www"
+            "name": "imie1",
+            "last_name": "nazwisko1",
+            "email": "email@email.com",
+            "message": "daskladsjkladsjklads"
         },
         {
-            "handle": "ccc",
-            "tCount": "wwwcccc"
+            "name": "imie1",
+            "last_name": "nazwisko2",
+            "email": "email@email.com",
+            "message": "das;jadsadsjl;adsl;"
         },
         {
-            "handle": "qqqq",
-            "tCount": "wwww"
-        },
+            "name": "daniel",
+            "last_name": "karolak",
+            "email": "daniel@karolak.pl",
+            "message": "adsadsads;"
+        }
+    ],
+    "reservations": [
         {
-            "handle": "aaaa2222",
-            "tCount": "aaa222"
+            "name": "imie",
+            "last_name": "nazwisko",
+            "telephone": "111111111",
+            "email": "email@email.pl",
+            "postcode": "111111",
+            "city": "adsladsjkl",
+            "address": "ads;adsadks;",
+            "studies": "lasdklads",
+            "degree": "1",
+            "message": "adsads;l;"
         }
     ]
 }

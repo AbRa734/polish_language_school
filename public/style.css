@@ -492,6 +492,8 @@ footer a:hover
 
 #languages_offer
 {
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-image: url("images/hand-drawn-back-school-background_23-2149464866.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -547,4 +549,157 @@ footer a:hover
 .copyright p
 {
     color: #8D99AE;
+}
+
+.first_name_input, .last_name_input
+{
+    float: left;
+    width: 50%;
+}
+
+.email_input
+{
+    clear: both;
+}
+
+label
+{
+    display: block;
+    padding-top: 20px;
+}
+
+#name, #last_name
+{
+    width: 90%;
+}
+
+#email, #message
+{
+    width: 100%;
+}
+
+#last_name
+{
+    margin-left: 10%;
+}
+
+.last_name_input > label
+{
+    margin-left: 10%;
+}
+
+input
+{
+    height: 40px;
+}
+
+input, textarea
+{
+    background-color: #E1EDF9;
+    border-radius: 25px;
+    border: none;
+}
+
+textarea
+{
+    height: 150px;
+}
+
+#contact_form button, #reservation_form button
+{
+    background-color: #FFC93C;
+    border-radius: 20px;
+    color: #2A465F;
+    width: 40%;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+}
+
+.submit_button, .submit_button_reserv
+{
+    padding-top: 30px;
+    text-align: center;
+}
+
+#contact_form_section
+{
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#packets_section
+{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#contact_form
+{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#reservation_form_section
+{
+    background-image: url("images/purple-fluid-background_53876-99561.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+}
+
+.left_side_reserv, .right_side_reserv
+{
+    float: left;
+}
+
+#reservation_form_section
+{
+    padding-bottom: 100px;
+    padding-top: 40px;
+}
+
+.first_name_input_reserv, .last_name_input_reserv, .email_input_reserv, .telephone_input_reserv, .postcode_input_reserv, .city_input_reserv, .studies_input_reserv, .degree_input_reserv
+{
+    float: left;
+    width: 50%;
+}
+
+.address_input_reserv, .message_input_reserv
+{
+    clear: both;
+}
+
+#reservation_form h3
+{
+    color: #0081C9;
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+#name_reserv, #last_name_reserv, #telephone_reserv, #email_reserv, #postcode_reserv, #city_reserv, #studies_reserv, #degree_reserv
+{
+    width: 90%;
+}
+
+#name_reserv, #telephone_reserv, #postcode_reserv
+{
+    padding-right: 10%;
+}
+
+#address_reserv, #message_reserv
+{
+    width: 95%;
+}
+
+#message_reserv
+{
+    height: 140px;
+}
+
+#blog_section_1, #blog_section_2
+{
+    padding-top: 75px;
+    padding-bottom: 75px;
 }

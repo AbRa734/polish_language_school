@@ -7,25 +7,67 @@ app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-handle = ''
-tCount = 0
+name = ''
+last_name = ''
+email = ''
+message = ''
 
-@app.route('/members', methods = ['POST'])
-def result():
+@app.route('/messages', methods = ['POST'])
+def post_method_messages():
     data = request.form
     filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
 
     with open(filename, 'r+') as file:
         file_data = json.load(file)
-        file_data["wiadomosci"].append(data)
+        file_data["messages"].append(data)
         file.seek(0)
         json.dump(file_data, file, indent=4)
 
     return jsonify(data)
 
-@app.route('/members', methods = ['GET'])
-def result_get():
+@app.route('/messages', methods = ['GET'])
+def get_method_messages():
     filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
     with open(filename) as blog_file:
         data = json.load(blog_file)
-        return data
+        data_to_return = data["messages"]
+        return data_to_return
+
+name = ''
+last_name = ''
+telephone = 0
+email = ''
+post_code = ''
+city = ''
+address = ''
+studies = ''
+degree = ''
+additional = ''
+
+@app.route('/reservations', methods = ['POST'])
+def post_method_reservations():
+    data = request.form
+    filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
+
+    with open(filename, 'r+') as file:
+        file_data = json.load(file)
+        file_data["reservations"].append(data)
+        file.seek(0)
+        json.dump(file_data, file, indent=4)
+
+    return jsonify(data)
+
+@app.route('/reservations', methods = ['GET'])
+def get_method_reservations():
+    filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
+    with open(filename) as blog_file:
+        data = json.load(blog_file)
+        data_to_return = data["reservations"]
+        return data_to_return
+
+#@app.route('/messages', methods = ['DELETE'])
+#def delete_method(handle):
+#    name = request.args.get('name')
+#    for item in items:
+#        if name == item['name']:
+#            items.remove(item)
