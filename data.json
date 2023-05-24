@@ -1,0 +1,20 @@
+{
+    "wiadomosci": [
+        {
+            "handle": "www",
+            "tCount": "www"
+        },
+        {
+            "handle": "ccc",
+            "tCount": "wwwcccc"
+        },
+        {
+            "handle": "qqqq",
+            "tCount": "wwww"
+        },
+        {
+            "handle": "aaaa2222",
+            "tCount": "aaa222"
+        }
+    ]
+}
