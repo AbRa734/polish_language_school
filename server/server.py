@@ -15,7 +15,7 @@ message = ''
 @app.route('/messages', methods = ['POST'])
 def post_method_messages():
     data = request.form
-    filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
+    filename = os.path.join(app.static_folder, 'data.json')
 
     with open(filename, 'r+') as file:
         file_data = json.load(file)
@@ -27,7 +27,7 @@ def post_method_messages():
 
 @app.route('/messages', methods = ['GET'])
 def get_method_messages():
-    filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
+    filename = os.path.join(app.static_folder, 'data.json')
     with open(filename) as blog_file:
         data = json.load(blog_file)
         data_to_return = data["messages"]
@@ -47,7 +47,7 @@ additional = ''
 @app.route('/reservations', methods = ['POST'])
 def post_method_reservations():
     data = request.form
-    filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
+    filename = os.path.join(app.static_folder, 'data.json')
 
     with open(filename, 'r+') as file:
         file_data = json.load(file)
@@ -59,7 +59,7 @@ def post_method_reservations():
 
 @app.route('/reservations', methods = ['GET'])
 def get_method_reservations():
-    filename = os.path.join(app.static_folder, '/Users/oliwierszafranski/WebstormProjects/ostateczny_projekt_www/data.json')
+    filename = os.path.join(app.static_folder, 'data.json')
     with open(filename) as blog_file:
         data = json.load(blog_file)
         data_to_return = data["reservations"]

@@ -703,3 +703,37 @@ textarea
     padding-top: 75px;
     padding-bottom: 75px;
 }
+
+.font-sizes
+{
+    padding-top: 7px;
+}
+
+.font-sizes i:first-of-type
+{
+    font-size: 20px!important;
+}
+
+.font-sizes i:first-of-type:hover
+{
+    color: #0081C9;
+}
+
+.font-sizes i:last-of-type
+{
+    font-size: 14px!important;
+}
+
+.font-sizes i:last-of-type:hover
+{
+    color: #0081C9;
+}
+
+@media (max-width: 800px)
+{
+    .right_side_reserv
+    {
+        padding-top: 50px;
+        width: 100%;
+    }
+}
