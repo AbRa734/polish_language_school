@@ -1,118 +1,170 @@
 import React, {useState, useEffect} from 'react'
+import { Input } from './utils/Input'
+import { FormProvider, useForm } from 'react-hook-form'
+import { BsFillCheckSquareFill } from 'react-icons/bs'
+
+import {
+    name_validation,
+    last_name_validation,
+    message_validation,
+    email_validation,
+    password_validation,
+    phone_validation,
+    postcode_validation,
+    city_validation,
+    address_validation,
+    studies_validation,
+    degree_validation,
+    additional_info_validation
+} from './utils/inputValidations'
 
 function ContactForm (){
+    const methods = useForm()
+    const [success, setSuccess] = useState(false)
     const [initialData, setInitialData] = useState([{}]);
-    useEffect(() => {
-        fetch('http://127.0.0.1:5000/messages').then(
-            response => response.json()
-        ).then(data => setInitialData(data))
-    }, []);
+
+    const onSubmit = methods.handleSubmit(data => {
+        let formData = new FormData();
+        formData.append('name', data['name']);
+        formData.append('last_name', data['last_name']);
+        formData.append('email', data['email']);
+        formData.append('message', data['message']);
+        async function fetchData() {
+            await fetch('http://127.0.0.1:5000/messages', {method: "POST", body: formData}).then(
+                response => response.json()
+            ).then(data => setInitialData(data))
+        }
+        methods.reset()
+        setSuccess(true)
+        fetchData();
+    })
 
     return (
-        <div className="ContactForm row">
-            <form action="http://127.0.0.1:5000/messages" method="POST">
-                <div className="first_name_input">
-                    <label htmlFor="name">Imię</label>
-                    <input type="text" id="name" name="name"/>
-                </div>
+        <FormProvider {...methods}>
+            <div className="ContactForm row">
+                <form className="container" action="http://127.0.0.1:5000/messages" method="POST">
+                    <div className="first_name_input">
+                        <Input {...name_validation} />
+                    </div>
 
-                <div className="last_name_input">
-                    <label htmlFor="last_name">Nazwisko</label>
-                    <input type="text" id="last_name" name="last_name"/>
-                </div>
+                    <div className="last_name_input">
+                        <Input {...last_name_validation} />
+                    </div>
 
-                <div className="email_input">
-                    <label htmlFor="email">E-mail</label>
-                    <input type="email" id="email" name="email"/>
-                </div>
+                    <div className="email_input">
+                        <Input {...email_validation} />
+                    </div>
 
-                <div className="message_input">
-                    <label htmlFor="message">Treść wiadomości</label>
-                    <textarea id="message" name="message"/>
-                </div>
+                    <div className="message_input">
+                        <Input {...message_validation} />
+                    </div>
 
-                <div className="submit_button">
-                    <button type="submit">Wyślij wiadomość</button>
-                </div>
-            </form>
-        </div>
+                    {success && (
+                        <p className="communication_correct_input">
+                            <BsFillCheckSquareFill /> Wiadomość została wysłana. Dziękujemy!
+                        </p>
+                    )}
+
+                    <div className="submit_button">
+                        <button onClick={onSubmit} type="submit">Wyślij wiadomość</button>
+                    </div>
+                </form>
+            </div>
+        </FormProvider>
     );
 }
 
 function ReservationForm (){
+    const methods = useForm()
+    const [success, setSuccess] = useState(false)
     const [initialData, setInitialData] = useState([{}]);
-    useEffect(() => {
-        fetch('http://127.0.0.1:5000/reservations').then(
-            response => response.json()
-        ).then(data => setInitialData(data))
-    }, []);
+
+    const onSubmit = methods.handleSubmit(data => {
+        let formData = new FormData();
+        formData.append('name', data['name']);
+        formData.append('last_name', data['last_name']);
+        formData.append('telephone', data['telephone']);
+        formData.append('email', data['email']);
+        formData.append('city', data['city']);
+        formData.append('address', data['address']);
+        formData.append('studies', data['studies']);
+        formData.append('degree', data['degree']);
+        formData.append('message', data['message']);
+
+        async function fetchData() {
+            await fetch('http://127.0.0.1:5000/reservations', {method: "POST", body: formData}).then(
+                response => response.json()
+            ).then(data => setInitialData(data))
+        }
+        methods.reset()
+        setSuccess(true)
+        fetchData();
+    })
 
     return (
-        <div className="ReservationForm row">
-            <form action="http://127.0.0.1:5000/reservations" method="POST">
+        <FormProvider {...methods}>
+            <div className="ReservationForm row">
+                <form action="http://127.0.0.1:5000/reservations" method="POST">
 
-                <div className="left_side_reserv col-md-6">
-                    <h3>Dane osobowe</h3>
-                    <div className="first_name_input_reserv">
-                        <label htmlFor="name">Imię</label>
-                        <input type="text" id="name_reserv" name="name"/>
+                    <div className="left_side_reserv col-md-6">
+                        <h3>Dane osobowe</h3>
+                        <div className="first_name_input_reserv">
+                            <Input {...name_validation} />
+                        </div>
+
+                        <div className="last_name_input_reserv">
+                            <Input {...last_name_validation} />
+                        </div>
+
+                        <div className="telephone_input_reserv">
+                            <Input {...phone_validation} />
+                        </div>
+
+                        <div className="email_input_reserv">
+                            <Input {...email_validation} />
+                        </div>
+
+                        <div className="postcode_input_reserv">
+                            <Input {...postcode_validation} />
+                        </div>
+
+                        <div className="city_input_reserv">
+                            <Input {...city_validation} />
+                        </div>
+
+                        <div className="address_input_reserv">
+                            <Input {...address_validation} />
+                        </div>
+
                     </div>
+                    <div className="right_side_reserv col-md-6">
+                        <h3>Informacje o kursie</h3>
+                        <div className="studies_input_reserv">
+                            <Input {...studies_validation} />
+                        </div>
 
-                    <div className="last_name_input_reserv">
-                        <label htmlFor="last_name">Nazwisko</label>
-                        <input type="text" id="last_name_reserv" name="last_name"/>
+                        <div className="degree_input_reserv">
+                            <Input {...degree_validation} />
+                        </div>
+
+                        <div className="message_input_reserv">
+                            <Input {...additional_info_validation} />
+                        </div>
+
+                        {success && (
+                            <p className="communication_correct_input">
+                                <BsFillCheckSquareFill /> Twoje zgłoszenie zostało wysłane. Dziękujemy!
+                            </p>
+                        )}
+
+                        <div className="submit_button_reserv">
+                            <button onClick={onSubmit} type="submit">Zarezerwuj miejsce</button>
+                        </div>
+
                     </div>
-
-                    <div className="telephone_input_reserv">
-                        <label htmlFor="telephone">Telefon</label>
-                        <input type="number" id="telephone_reserv" name="telephone"/>
-                    </div>
-
-                    <div className="email_input_reserv">
-                        <label htmlFor="email">E-mail</label>
-                        <input type="email" id="email_reserv" name="email"/>
-                    </div>
-
-                    <div className="postcode_input_reserv">
-                        <label htmlFor="postcode">Kod pocztowy</label>
-                        <input type="text" id="postcode_reserv" name="postcode"/>
-                    </div>
-
-                    <div className="city_input_reserv">
-                        <label htmlFor="city">Miasto</label>
-                        <input type="text" id="city_reserv" name="city"/>
-                    </div>
-
-                    <div className="address_input_reserv">
-                        <label htmlFor="address">Adres</label>
-                        <input type="text" id="address_reserv" name="address"/>
-                    </div>
-
-                </div>
-                <div className="right_side_reserv col-md-6">
-                    <h3>Informacje o kursie</h3>
-                    <div className="studies_input_reserv">
-                        <label htmlFor="studies">Kierunek studiów</label>
-                        <input type="text" id="studies_reserv" name="studies"/>
-                    </div>
-
-                    <div className="degree_input_reserv">
-                        <label htmlFor="degree">Stopień studiów</label>
-                        <input type="number" id="degree_reserv" name="degree"/>
-                    </div>
-
-                    <div className="message_input_reserv">
-                        <label htmlFor="message">Uwagi/informacje dodatkowe</label>
-                        <textarea id="message_reserv" name="message"/>
-                    </div>
-
-                    <div className="submit_button_reserv">
-                        <button type="submit">Zarezerwuj miejsce</button>
-                    </div>
-
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </FormProvider>
     );
 }
 

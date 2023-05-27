@@ -737,3 +737,35 @@ textarea
         width: 100%;
     }
 }
+
+.last_name_input label
+{
+    margin-left: 10%;
+}
+
+.last_name_input .communication_wrong_input
+{
+    margin-left: 10%;
+}
+
+.communication_wrong_input
+{
+    color: darkred;
+    padding-top: 15px;
+}
+
+.communication_correct_input
+{
+    color: darkgreen;
+    padding-top: 15px;
+}
+
+.email_input_reserv input
+{
+    width: 90%!important;
+}
+
+.last_name_input_reserv input
+{
+    margin-left: 0!important;
+}
