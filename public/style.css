@@ -1,6 +1,15 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
 body
 {
     font-family: 'Sora', sans-serif;
+    max-width: 95dvw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav, header > div, .left_side, .right_side
